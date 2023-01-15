@@ -1,0 +1,17 @@
+{
+  "name": "docker_course",
+  "version": "1.0.0",
+  "description": "This is a docker crash course repo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -L app.js"
+  },
+  "author": "greenMakaroni",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
