@@ -14,7 +14,16 @@ app.get('/', (req, res) => {
         {
         "id":"2",
         "data": "Data of id2"
+        },
+        {
+        "id":"3",
+        "data": "and another change",
+        },
+        {
+            "id": "4",
+            "data": "and another change to the source code"
         }
+        
 ])
 })
 
@@ -23,6 +32,10 @@ app.get('/kappa', (req, res) => {
         {
             "id":"1",
             "data":"kappa"
+        },
+        {
+            "id":"2",
+            "data": "change to the file"
         }
     ])
 })
