@@ -27,7 +27,7 @@ RUN npm install
 COPY . .
 
 # expose port
-EXPOSE 3000
+EXPOSE 4000
 
 # this allows us to input commands at runtime when container begins to run 
 CMD ["npm", "run", "dev"]
@@ -85,3 +85,7 @@ CMD ["npm", "run", "dev"]
 # process is easier with docker compose
 # docker compose is a way for single composed docker file
 # which contains all the docker configuration of our projects
+
+
+# delete EVERYTHINGGGGGGG
+# docker system prune

@@ -34,9 +34,14 @@ app.get('/', (req, res) => {
         {
             "id":"7",
             "data": "NANADAJME HOKAGE"
+        },
+        {
+            "id":"8",
+            "data": "Orochimaru Sama"
         }
         
 ])
+console.log("get happened")
 })
 
 app.get('/kappa', (req, res) => {
@@ -52,6 +57,6 @@ app.get('/kappa', (req, res) => {
     ])
 })
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000")
+app.listen(4000, () => {
+    console.log("Server running on port 4000")
 })
