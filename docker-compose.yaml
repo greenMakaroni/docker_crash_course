@@ -1,0 +1,10 @@
+version: "2.15.1"
+services: 
+  api: 
+    build: ./api
+    container_name: api_server_c1
+    ports: 
+      - '3000:3000'
+    volumes:
+      - ./api:/app
+      - ./app/node_modules

@@ -22,6 +22,18 @@ app.get('/', (req, res) => {
         {
             "id": "4",
             "data": "and another change to the source code"
+        },
+        {
+            "id":"5",
+            "data": "test data to see how volumes work"
+        },
+        {
+            "id":"6",
+            "data": "test data to see how volumes work"
+        },
+        {
+            "id":"7",
+            "data": "NANADAJME HOKAGE"
         }
         
 ])

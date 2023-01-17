@@ -2,6 +2,8 @@
 # run image with alpine distro and node-v17 on it
 FROM node:17-alpine
 
+RUN npm i -g nodemon
+
 # when we run commands in a docker container, run it in the /app folder
 # COPY . . after WORKDIR /app will copy files into /app folder 
 WORKDIR /app
@@ -24,13 +26,11 @@ RUN npm install
 
 COPY . .
 
-
-
 # expose port
 EXPOSE 3000
 
 # this allows us to input commands at runtime when container begins to run 
-CMD ["node", "app.js"]
+CMD ["npm", "run", "dev"]
 
 # build image from the docker file, dot means build image from the docker file in the . directory (relative)
 # docker build -t my_image .
@@ -66,3 +66,22 @@ CMD ["node", "app.js"]
 #  => => exporting layers                                                                                                                                  0.4s 
 #  => => writing image sha256:e13f5d8043a39f85b575ac0e031d9eaddd6d7d7372870b11bfc8f04dcf28f3bd                                                             0.0s
 #  => => naming to docker.io/library/c8_server 
+
+
+# volumes
+# docker run --name server_c1 -p 3000:3000 --rm my_second_image:nodemon
+# --rm flag will remove container every time we stop it
+
+# -v flag maps folder in our computer to a foler in a container
+# -v absolute_path:container_folder_path
+
+# This means that any changes to the project folder will be reflected in a container folder without needing to build new image
+# this creates an issue that if something happens to a folder here e.g., node_modules deleted, it will happen in container too
+# We can fix that by adding another volume... an anonymous volume
+# docker run --name name -p 3000:3000 --rm -v absolute_path:container -v more_specific_container_folder my_docker_image:version
+# simply by adding second -v flag, a second volume
+
+# volumes helps us to preview our changes to the source code live in the container
+# process is easier with docker compose
+# docker compose is a way for single composed docker file
+# which contains all the docker configuration of our projects
